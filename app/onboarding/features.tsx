@@ -31,9 +31,9 @@ export default function FeaturesScreen() {
 
           <View style={styles.features}>
             <Feature
-              icon="cart-variant"
-              title="In-App Purchases"
-              description="Superwall integration for subscriptions and one-time purchases"
+              icon="palette"
+              title="Custom Run Art"
+              description="Design beautiful shareable graphics with flexible layouts"
             />
             <Feature
               icon="navigation"

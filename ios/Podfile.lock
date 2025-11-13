@@ -2034,31 +2034,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.1)
-  - Superscript (0.1.16)
-  - superwall-react-native (1.4.7):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - SuperwallKit (= 3.12.4)
-    - Yoga
-  - SuperwallKit (3.12.4):
-    - Superscript (= 0.1.16)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -2154,14 +2129,11 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - "superwall-react-native (from `../node_modules/@superwall/react-native-superwall`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - SocketRocket
-    - Superscript
-    - SuperwallKit
 
 EXTERNAL SOURCES:
   boost:
@@ -2345,8 +2317,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  superwall-react-native:
-    :path: "../node_modules/@superwall/react-native-superwall"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2442,9 +2412,6 @@ SPEC CHECKSUMS:
   RNReanimated: 9ee6347ca0aa3cf78cae715455e781728ae142e2
   RNScreens: d022507f2b6d76c73335e9e35aedcf7bb2f791b0
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  Superscript: 17e2597de5e1ddfa132e217b33d1eb8eddf13e0f
-  superwall-react-native: 0c0ab78844acd6cc2f6944f9f7041f5b81b08864
-  SuperwallKit: e89ac4f4093ed4135aa4876d506bec443cb933f2
   Yoga: 90d80701b27946c4b23461c00a7207f300a6ff71
 
 PODFILE CHECKSUM: ac32857d9cc1f445437085fa069222add4a5dc94

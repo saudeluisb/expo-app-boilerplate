@@ -4,11 +4,9 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useMemo } from 'react';
-import { Platform } from 'react-native';
 import 'react-native-reanimated';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import { superwallService } from '@/services/superwall';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { StravaProvider } from '@/contexts/StravaContext';
@@ -33,12 +31,6 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...fontMap,
   });
-
-  useEffect(() => {
-    if (Platform.OS !== 'web') {
-      superwallService.initialize();
-    }
-  }, []);
 
   useEffect(() => {
     if (loaded) {
