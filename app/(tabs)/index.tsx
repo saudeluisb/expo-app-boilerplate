@@ -287,6 +287,16 @@ export default function EditorScreen() {
     });
   };
 
+  useEffect(() => {
+    setSelectedIds((current) => current.filter((id) => elements.some((element) => element.id === id)));
+  }, [elements]);
+
+  useEffect(() => {
+    if (!isMultiSelectEnabled && selectedIds.length > 1) {
+      setSelectedIds((current) => (current.length ? [current[current.length - 1]] : current));
+    }
+  }, [isMultiSelectEnabled, selectedIds]);
+
   const prepareDragSnapshot = (id: string) => {
     setSelectedIds((current) => {
       const next = current.includes(id) ? current : [id];
@@ -414,21 +424,23 @@ export default function EditorScreen() {
   }, [elements]);
 
   const exportElements = useMemo(() =>
-    elements.map((element) => {
-      if (element.type === 'polyline') {
-        const offsetPoints = element.normalizedPoints.map((point) => ({
-          x: point.x + element.position.x,
-          y: point.y + element.position.y,
-        }));
-        return {
-          type: 'polyline' as const,
-          points: offsetPoints,
-          strokeWidth: element.stroke.strokeWidth,
-          color: element.stroke.color,
-          gradient: element.stroke.gradient,
-          opacity: element.stroke.opacity,
-        };
-      }
+    elements
+      .filter((element) => !(element.type === 'polyline' && element.hidden))
+      .map((element) => {
+        if (element.type === 'polyline') {
+          const offsetPoints = element.normalizedPoints.map((point) => ({
+            x: point.x + element.position.x,
+            y: point.y + element.position.y,
+          }));
+          return {
+            type: 'polyline' as const,
+            points: offsetPoints,
+            strokeWidth: element.stroke.strokeWidth,
+            color: element.stroke.color,
+            gradient: element.stroke.gradient,
+            opacity: element.stroke.opacity,
+          };
+        }
       if (element.type === 'stat') {
         return {
           type: 'text' as const,
@@ -546,6 +558,9 @@ export default function EditorScreen() {
 
   const renderElement = (element: EditorElement) => {
     if (element.type === 'polyline') {
+      if (element.hidden) {
+        return null;
+      }
       const offsetPoints = element.normalizedPoints.map((point) => ({
         x: point.x,
         y: point.y,
