@@ -26,6 +26,26 @@ Or
    ```
 -- you will need to make a development build or run in development mode as Superwall does not work in Expo GO
 
+### Configure Strava integration
+
+Create developer credentials in the [Strava API settings](https://www.strava.com/settings/api) and expose them to the app via
+`app.json` or environment variables before launching the editor:
+
+```json
+{
+  "expo": {
+    "extra": {
+      "STRAVA_CLIENT_ID": "YOUR_CLIENT_ID",
+      "STRAVA_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+      "STRAVA_REDIRECT_URI": "myapp://oauth/strava"
+    }
+  }
+}
+```
+
+Alternatively, you can set `EXPO_PUBLIC_STRAVA_CLIENT_ID`, `EXPO_PUBLIC_STRAVA_CLIENT_SECRET`, and
+`EXPO_PUBLIC_STRAVA_REDIRECT_URI` in your shell environment.
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
