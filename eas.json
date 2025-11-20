@@ -10,24 +10,15 @@
       "ios": {
         "simulator": true
       },
-      "env": {
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_IOS": "your_ios_api_key",
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_ANDROID": "your_android_key_here"
-      }
+      "env": {}
     },
     "preview": {
       "distribution": "internal",
-      "env": {
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_IOS": "your_ios_api_key",
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_ANDROID": "your_android_key_here"
-      }
+      "env": {}
     },
     "production": {
       "autoIncrement": true,
-      "env": {
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_IOS": "your_ios_api_key",
-        "EXPO_PUBLIC_SUPERWALL_API_KEY_ANDROID": "your_android_key_here"
-      }
+      "env": {}
     }
   },
   "submit": {

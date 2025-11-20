@@ -1,6 +1,6 @@
 # Welcome to jack's Expo React Native free boilerplate 👋
 
-This is an [Expo](https://expo.dev) template project with Superwall libraries ready to use and a simple onboarding sequence for first time users.
+This is an [Expo](https://expo.dev) template project with a Strava-connected onboarding flow and a simple editor experience tailored for showcasing your runs.
 
 This free boilerplate is sponsored by [post bridge](https://post-bridge.com) - a super simple and affordable social media scheduling tool for small teams and founders.
 
@@ -24,7 +24,26 @@ Or
    ```bash
     npx expo start
    ```
--- you will need to make a development build or run in development mode as Superwall does not work in Expo GO
+
+### Configure Strava integration
+
+Create developer credentials in the [Strava API settings](https://www.strava.com/settings/api) and expose them to the app via
+`app.json` or environment variables before launching the editor:
+
+```json
+{
+  "expo": {
+    "extra": {
+      "STRAVA_CLIENT_ID": "YOUR_CLIENT_ID",
+      "STRAVA_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+      "STRAVA_REDIRECT_URI": "myapp://oauth/strava"
+    }
+  }
+}
+```
+
+Alternatively, you can set `EXPO_PUBLIC_STRAVA_CLIENT_ID`, `EXPO_PUBLIC_STRAVA_CLIENT_SECRET`, and
+`EXPO_PUBLIC_STRAVA_REDIRECT_URI` in your shell environment.
 
 In the output, you'll find options to open the app in a
 
